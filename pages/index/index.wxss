@@ -1,0 +1,46 @@
+.body{background-color: #f4f4f4;}
+
+
+.nav{display: flex;color: rgba(0,0,0,.6);font-size: 16px;background-color: white;}
+.nav view{width: 33%;text-align: center;padding: 24rpx 0;}
+.nav .highlight{color: rgb(49, 194, 124);border-bottom: 1px solid rgb(49, 194, 124);}
+
+
+.swiper_box image{width: 100%;height: 300rpx;}
+
+.dt_box{padding: 40rpx 10rpx 0 10rpx;}
+.dt_box .title{padding: 0 15rpx 15rpx 15rpx;display: block;font-size: 20px;}
+.dt_box .dt_content{display: flex;justify-content: space-around;flex-wrap: wrap;}
+.dt_box .dt_content>view{width: 48%;margin-bottom: 50rpx;position: relative;}
+.dt_box .dt_content image{width: 100%;height: 347rpx;}
+.dt_box .dt_content text{font-size: 14px;}
+
+.dt_box .dt_content>view .play{position: absolute;width: 50rpx;height: 50rpx;top: 285rpx;right: 10rpx;}
+.dt_box .dt_content>view .erji{position: absolute;width: 73rpx;height: 30rpx;top: 295rpx;left: 15rpx;background-position-x: 0rpx;background-position-y:-148rpx;}
+
+.dt_box .dt_content .sprite{background-image: url('https://y.gtimg.cn/mediastyle/mobile/yqq_v5/img/list_sprite.png?max_age=19830212&d=20151105145423');background-size: cover;background-repeat: no-repeat;}
+
+
+/* 推荐页 */
+.rankListBox{position: relative;height: 200rpx;margin: 20rpx 20rpx 0 20rpx;padding-left: 220rpx;font-size: 14px;background-color: white;}
+.rankListBox .rankListBox-left{position: absolute;left: 0;top: 0;}
+.rankListBox .rankListBox-left image{width: 200rpx;height: 200rpx;}
+
+.rankListBox .rankListBox-right{color: rgba(0, 0, 0, 0.5);}
+.rankListBox .rankListBox-right .text_name{color: black;}
+.rankListBox .rankListBox-right view{height: 46rpx; overflow: hidden;}
+
+
+/* 搜索页 */
+.search{background-color: white;}
+.search .inputBox{position:relative; background-color: #f4f4f4;padding: 30rpx;color: rgba(0, 0, 0, 0.3);font-size: 26rpx;}
+.search .inputBox icon{position: absolute;left: 50rpx;top: 50rpx;}
+.search .inputBox input{display: inline-block;width: 600rpx; border: 4rpx solid white;background-color: white; border-radius: 10rpx;height: 70rpx;padding-left: 80rpx;}
+.search .inputBox .focus{width: 480rpx;}
+.search .inputBox .cancel{position: absolute;top: 46rpx;right: 60rpx;font-size: 16px;}
+
+.search .searchList .searchListItem{position: relative;height: 110rpx;border-bottom: 1px solid rgba(0, 0, 0, 0.2);padding-left: 140rpx;padding-top: 26rpx;}
+.search .searchList .searchListItem .icon{position: absolute;top: 36rpx;left: 40rpx;width: 60rpx;height: 60rpx;background-image: url('https://y.gtimg.cn/mediastyle/mobile/yqq_v5/img/search_sprite.png?max_age=2592000&v=87848a61828f15e8f0a517b10e67cd2f');background-size: cover;background-repeat: no-repeat;background-position-y: 6rpx;}
+.search .searchList .searchListItem .songName{height: 54rpx;font-size: 18px;overflow: hidden;}
+.search .searchList .searchListItem .singerName{height: 40rpx; font-size: 13px;color: rgba(0, 0, 0, 0.5);overflow: hidden;}
+

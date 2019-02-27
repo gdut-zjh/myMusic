@@ -1,0 +1,81 @@
+<!--index.wxml-->
+<view class="body">
+  <view class="nav">
+    <view wx:for="{{menu_data}}" class='{{cur_nav_index == index?"highlight" : ""}}' bindtap='changeMenu' data-index='{{index}}'>
+      {{item}}
+    </view>
+  </view>
+
+  <!-- 推荐页 -->
+  <view wx:if="{{cur_nav_index==0}}" class="recommond_box">
+    <view class="swiper_box">
+      <swiper autoplay='true' interval='2000' indicator-dots='true' indicator-active-color='white' indicator-color='rgba(144,144,144,.8)' circular='true'>
+        <swiper-item wx:for="{{recommend_data.slider}}">
+          <image src='{{item.picUrl}}'></image>
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view class='dt_box'>
+      <text class="title">电台</text>
+      <view class='dt_content'>
+        <view wx:for="{{recommend_data.radioList}}">
+          <image src='{{item.picUrl}}'></image>
+          <text>{{item.Ftitle}}</text>
+          <view class="play sprite"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class='dt_box'>
+      <text class="title">热门歌单</text>
+      <view class='dt_content'>
+        <view wx:for="{{recommend_data.songList}}">
+          <image src='{{item.picUrl}}'></image>
+          <text>{{item.songListDesc}}</text>
+          <view class="play sprite"></view>
+          <view class="erji sprite"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 排行榜页 -->
+  <view wx:if="{{cur_nav_index==1}}" class="rankList">
+    <view class="rankListBox" wx:for="{{ rankList_data }}">
+      <view class="rankListBox-left">
+        <image src='{{ item.picUrl }}'></image>
+      </view>
+      <view class="rankListBox-right">
+        <view class="text_name">{{ item.topTitle }}</view>
+        <view wx:for="{{ item.songList }}" wx:for-item="songListItem">
+          {{index + 1}}
+          <text class="text_name">{{ songListItem.songname }}</text> - {{ songListItem.singername }}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索 -->
+  <view wx:if="{{cur_nav_index==2}}" class="search">
+    <!-- 搜索框 -->
+    <view class="inputBox">
+      <icon type="search" size="18"></icon>
+      <input type='text' placeholder='搜索歌曲、歌单、专辑' class="{{ focus ? 'focus' : '' }}" bindtap='searchFocus' confirm-type='search' bindconfirm='search'></input>
+      <text wx:if="{{ focus }}" bindtap='searchBlur' class="cancel">取消</text>
+    </view>
+    <!-- 搜索结果列表 -->
+    <view class="searchList" wx:if="{{ search_success }}">
+      <view class="searchListItem" wx:for="{{ search_data.data.song.list }}" bindtap='play' data-songmid="{{item.songmid}}">
+        <view class="icon"></view>
+        <view>
+          <view class="songName">{{ item.songname }}</view>
+          <view class="singerName">
+            <text wx:for="{{ item.singer }}">{{ item.name + '   ' }}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
